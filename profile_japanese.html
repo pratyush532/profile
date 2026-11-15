@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プラトユシュ・モハンティ — ポートフォリオ</title>
-  <meta name="description" content="プラトユシュ・モハンティのポートフォリオ — 3D・ML・AIエンジニア">
+  <title>プラトユシュ・モハンティ | 3D・機械学習・AIエンジニア</title>
+  <meta name="description" content="プラトユシュ・モハンティのポートフォリオ。機械学習、3D、IoTのプロジェクトと経歴を紹介します。">
+
+  <!-- 最初の描画前にテーマを適用（ちらつき防止） -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav id="nav"></nav>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <nav id="nav" aria-label="セクション"></nav>
   <header id="header"></header>
   <main id="main"></main>
   <footer id="footer"></footer>

@@ -1,469 +1,545 @@
+// content.js — every word on the site lives here.
+// Edit text in CONTENT.en / CONTENT.ja; URLs shared by both languages are in LINKS.
+
+const LINKS = {
+  linkedin:  "https://www.linkedin.com/in/pratyush-mohanty-8161b9222",
+  instagram: "https://www.instagram.com/mohanty_pratyush_xo/",
+  github:    "https://github.com/pratyush532",
+
+  planet:    "http://github.com/pratyush532/3D-and-Blender/tree/main/Planet%20Creation",
+  physics:   "https://www.linkedin.com/posts/pratyush-mohanty-8161b9222_python-apitesting-blender3d-activity-7043952169170976768-cuwx",
+  webModels: "https://64b0c57266aafd0008d6ff0e--preeminent-rolypoly-6833f5.netlify.app/",
+
+  agroDetect: "https://drive.google.com/file/d/15kMXunLikw8A-FVX4otFSD8Hl3kWgDMh/view?usp=drive_link",
+  diabetes:   "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jbrS_tYAAAAJ&citation_for_view=jbrS_tYAAAAJ:u5HHmVD_uO8C",
+  disability: "https://drive.google.com/file/d/1Ll2frNCsTUrgBPxdlAU0DEuTQiFP1XWM/view?usp=drive_link",
+
+  certCan:     "https://www.udemy.com/certificate/UC-0c3377df-dbf4-4b37-8400-412c9090db22/",
+  certNat:     "https://drive.google.com/file/d/1cf3PMImbRjtiVixjs5hL8KotTaM4rHgr/view?usp=sharing",
+  certJlpt:    "https://drive.google.com/file/d/1XkGwWab65sm6gIsFrCqhguL6OPM_JEQa/view?usp=sharing",
+  certIcetsis: "https://www.linkedin.com/feed/update/urn:li:activity:7160282252805869568/",
+  // certIbm:    "https://courses.ibmcep.cognitiveclass.ai/certificates/b496c3da890f4dfa9c53f7fb9fd32521",
+  // certNvidia: "https://courses.nvidia.com/certificates/ae21b59f8ac54bacac5221c3ab77f13a/",
+
+  awardRank:     "https://drive.google.com/file/d/1JUqG6DID4MT_kL0zdQEv--m56U5IrCxj/view?usp=drive_link",
+  awardClinics:  "https://www.linkedin.com/posts/pratyush-mohanty-8161b9222_team-androidapp-engineeringdesign-activity-7024057892177674240-6E8l",
+  awardCapstone: "https://drive.google.com/file/d/123FNu-pcuJvU6n-fU72irf1M472Lznz1/view?usp=drive_link"
+};
+
 const CONTENT = {
+  /* ───────────────────────── English ───────────────────────── */
   en: {
     name: "Pratyush Mohanty",
-    tagline: "I love 3D, ML and AI",
+    nameLines: ["Pratyush", "Mohanty"],
+    role: "3D, machine learning and AI engineer",
+    intro: [
+      "I studied computer science with a specialisation in AI, and I've been making things in Blender and Godot since 2019.",
+      "I like projects where machine learning, 3D and hardware meet. So far that has meant a crop-disease classifier that works from a phone photo, an IoT device that helps people quit smoking, and a node system that grows planets."
+    ],
+    photo: "1682097621086.jpeg",
+    social: [
+      { label: "GitHub",    href: LINKS.github },
+      { label: "LinkedIn",  href: LINKS.linkedin },
+      { label: "Instagram", href: LINKS.instagram }
+    ],
     nav: {
-      threeD: "3D / Game Dev",
-      education: "Education",
-      experience: "Experience",
+      threeD: "3D",
       projects: "Projects",
-      certifications: "Certifications",
-      achievements: "Achievements",
-      langSwitch: "日本語で見る",
-      langSwitchHref: "profile_japanese.html"
-    },
-    social: {
-      linkedin: "https://www.linkedin.com/in/pratyush-mohanty-8161b9222",
-      instagram: "https://www.instagram.com/mohanty_pratyush_xo/",
-      github: "https://github.com/pratyush532"
+      experience: "Experience",
+      education: "Education",
+      recognition: "Awards",
+      langSwitch: "日本語",
+      langSwitchHref: "profile_japanese.html",
+      theme: "Switch between light and dark theme"
     },
     sections: {
+      // Each 3D item takes an optional image, e.g. image: "renders/planet.jpg".
+      // Leave it "" to show the item as text only. Landscape images work best.
       threeD: {
         id: "three-d",
-        title: "3D & Game Development",
-        subtitle: "Softwares: Blender · Unity · Godot · Aseprite",
+        title: "3D and game development",
+        note: "Made with Blender, Unity, Godot and Aseprite.",
         items: [
           {
-            title: "3D Portfolio",
-            description: "Art created using Blender and Godot.",
-            link: "https://www.instagram.com/mohanty_pratyush_xo/",
-            linkText: "View"
+            title: "3D gallery",
+            description: "Renders and scenes made in Blender and Godot.",
+            link: LINKS.instagram,
+            image: "",
+            linkText: "See it on Instagram"
           },
           {
-            title: "Procedural Planet Generation",
-            description: "Node system for procedural planet generation made in Blender.",
-            link: "http://github.com/pratyush532/3D-and-Blender/tree/main/Planet%20Creation",
-            linkText: "View"
+            title: "Procedural planet generator",
+            description: "A Blender node system that builds whole planets procedurally.",
+            link: LINKS.planet,
+            image: "",
+            linkText: "Get the node setup on GitHub"
           },
           {
-            title: "Physical Simulation",
-            description: "Physics simulation using Blender Python API.",
-            link: "https://www.linkedin.com/posts/pratyush-mohanty-8161b9222_python-apitesting-blender3d-activity-7043952169170976768-cuwx",
-            linkText: "View"
+            title: "Physics simulation",
+            description: "A physics simulation scripted with the Blender Python API.",
+            link: LINKS.physics,
+            image: "",
+            linkText: "Watch it on LinkedIn"
           },
           {
-            title: "3D Models on Web",
-            description: "Project to embed 3D models interactively on a website.",
-            link: "https://64b0c57266aafd0008d6ff0e--preeminent-rolypoly-6833f5.netlify.app/",
-            linkText: "View"
+            title: "3D models on the web",
+            description: "An experiment in embedding interactive 3D models in a web page.",
+            link: LINKS.webModels,
+            image: "",
+            linkText: "Open the demo"
           }
         ]
       },
-      education: {
-        id: "education",
-        title: "Education",
-        items: [
-          {
-            title: "Vellore Institute of Technology – Andhra Pradesh",
-            sub: "B.Tech in Computer Science, Specialization in Artificial Intelligence",
-            meta: "CGPA: 9.47 · Graduated September 2024"
-          },
-          {
-            title: "CMR National Public School, Bengaluru",
-            sub: "Class 12, PCMC, CBSE",
-            meta: "93.6% · 2020"
-          },
-          {
-            title: "Presidency School, Kasturinagar, Bengaluru",
-            sub: "Class 10, CBSE",
-            meta: "96.8% · 2018"
-          }
-        ]
-      },
-      experience: {
-        id: "experience",
-        title: "Experience",
-        items: [
-          {
-            title: "Web Development Internship",
-            org: "Human Resocia Co. Ltd. (Remote) · Tokyo, Japan",
-            period: "Jan 2024 – Jun 2024",
-            bullets: [
-              "Prototype development for a report generation software.",
-              "Converted install-based software to a SaaS platform with account creation, login, and report preview features for improved UX.",
-              "Responsibilities included UI/UX development, tech stack research, and back-end file processing."
-            ]
-          },
-          {
-            title: "Data Analytics & Web Development Intern",
-            org: "Chairman of Rasipuram Town · Amaravati, AP",
-            period: "Jan 2023 – Jun 2023",
-            bullets: [
-              "Created the concept and front end for the official town website.",
-              "Devised data collection strategies and implemented data cleaning procedures to enhance data quality.",
-              "Website served as a comprehensive repository for public service announcements and local news."
-            ]
-          },
-          {
-            title: "UI/UX Design & 3D Development Intern",
-            org: "Mukham, VIT AP Innovation & Incubation Center · Amaravati, AP",
-            period: "May 2022 – Oct 2022",
-            bullets: [
-              "3D modelling and sculpting of campus in Blender to enable geo-tagging.",
-              "UI/UX redesign of the Mukham app and full development of the companion MauTHN app."
-            ]
-          },
-          {
-            title: "Freelance Game & 3D Developer",
-            org: "Fiverr · Instagram · Deviantart · Itch.io",
-            period: "May 2019 – Nov 2020",
-            bullets: [
-              "Godot for level design, Unity for terrain/environment, Blender Python API and OpenGL for add-on development.",
-              "Commissions for level design, concept design, and 3D rendering using Aseprite, Blender 3D, and Photoshop 3D.",
-              "Leveraged Godot and Python to generate large environments with realistic corrosion effects."
-            ]
-          }
-        ]
-      },
+
       projects: {
         id: "projects",
         title: "Projects",
         items: [
           {
-            title: "Agro Detect: Deep Learning for Paddy Disease Classification",
-            tags: ["Python", "Keras", "Streamlit", "Android – Java"],
+            title: "Agro Detect",
+            summary: "Deep learning that identifies paddy diseases from a photo of the crop.",
             bullets: [
-              "Custom CNN architectures using Octave Convolution and Squeeze-Excitation Networks on the Paddy Doctor dataset. Final accuracy: 97.59%.",
-              "Deployable ML pipeline for an Android app where users upload crop images to identify diseases."
+              "Custom CNN architectures using Octave Convolution and Squeeze-and-Excitation networks, trained on the Paddy Doctor dataset. Final accuracy: 97.59%.",
+              "Built as a deployable pipeline behind an Android app, where users upload a crop photo to identify the disease."
             ],
-            link: "https://drive.google.com/file/d/15kMXunLikw8A-FVX4otFSD8Hl3kWgDMh/view?usp=drive_link",
-            linkText: "View Project"
+            award: "Outstanding Capstone Project Award",
+            stack: ["Python", "Keras", "Streamlit", "Android (Java)"],
+            link: LINKS.agroDetect,
+            linkText: "View the project"
           },
           {
-            title: "Fragility Flow Plot Generation",
-            tags: ["Python", "Numpy", "Keras", "Scikit-learn", "Streamlit"],
+            title: "Smoother Quit",
+            status: "Patent pending",
+            summary: "An IoT device and app that track nicotine use and help people quit smoking.",
             bullets: [
-              "AI solution to generate Fragility Flow plots from building structural data.",
-              "Deployed web app with interactive real-time graph generation."
+              "A Raspberry Pi device in a 3D-printed housing administers nicotine patches and reports its usage to an Android app.",
+              "I led the team that built the device."
             ],
-            link: "https://github.com/pratyush532",
-            linkText: "View Project"
-          },
-          {
-            title: "Smoother Quit (Patent Pending)",
-            tags: ["Raspberry Pi", "Python", "Android – Java", "PHP", "Blender", "FreeCAD"],
-            bullets: [
-              "Full-stack IoT solution to track nicotine consumption and aid smoking cessation.",
-              "Physical device with 3D-printed housing communicates with Android app to track device usage.",
-              "Led team that built the Raspberry Pi device administering nicotine patches."
-            ],
-            link: "https://github.com/pratyush532",
-            linkText: "View Project"
-          },
-          {
-            title: "Diabetic Healthcare Data Analytics",
-            tags: ["Research", "Machine Learning"],
-            bullets: [
-              "ML models to predict early onset diabetes using symptoms and complications like diabetic retinopathy.",
-              "Published in the book: \"Data Modelling and Analytics for the Internet of Medical Things\"."
-            ],
-            link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jbrS_tYAAAAJ&citation_for_view=jbrS_tYAAAAJ:u5HHmVD_uO8C",
-            linkText: "View Research"
+            stack: ["Raspberry Pi", "Python", "Android (Java)", "PHP", "Blender", "FreeCAD"],
+            link: LINKS.github,
+            linkText: "GitHub"
           },
           {
             title: "Integrated Disability Support System",
-            tags: ["Arduino", "C", "Android – Java", "PHP"],
+            summary: "A sensor-equipped walking stick with obstacle detection and depth perception.",
             bullets: [
-              "Physical support device for differently-abled people with obstacle detection and depth perception.",
-              "Sensor-equipped walking stick communicates wirelessly; gait data displayed in the Android app."
+              "The stick communicates wirelessly with an Android app, which displays the user's gait data."
             ],
-            link: "https://drive.google.com/file/d/1Ll2frNCsTUrgBPxdlAU0DEuTQiFP1XWM/view?usp=drive_link",
-            linkText: "View Project"
+            award: "Best Contemporary Project, VIT-AP Engineering Clinics (IoT)",
+            stack: ["Arduino", "C", "Android (Java)", "PHP"],
+            link: LINKS.disability,
+            linkText: "View the project"
+          },
+          {
+            title: "Fragility Flow plot generation",
+            summary: "An AI tool that generates Fragility Flow plots from a building's structural data.",
+            bullets: [
+              "Deployed as a web app that draws the graphs interactively, in real time."
+            ],
+            stack: ["Python", "NumPy", "Keras", "scikit-learn", "Streamlit"],
+            link: LINKS.github,
+            linkText: "GitHub"
+          },
+          {
+            title: "Diabetic healthcare data analytics",
+            summary: "ML models that predict early-onset diabetes from symptoms and complications such as diabetic retinopathy.",
+            bullets: [
+              "Published in the book “Data Modelling and Analytics for the Internet of Medical Things”."
+            ],
+            stack: ["Research", "Machine learning"],
+            link: LINKS.diabetes,
+            linkText: "View the publication"
           }
         ]
       },
-      certifications: {
-        id: "certifications",
-        title: "Certifications",
+
+      experience: {
+        id: "experience",
+        title: "Experience",
         items: [
           {
-            title: "Master CAN protocol completely from Scratch (CAN + CAN-FD)",
-            meta: "May 2025 · Udemy",
-            link: "https://www.udemy.com/certificate/UC-0c3377df-dbf4-4b37-8400-412c9090db22/"
-          },  
-          {
-            title: "NAT (Japanese Language Test) Q4",
-            meta: "Sep 2024 · Senmon Kyouiku Publishing Co., Ltd.",
-            link: "https://drive.google.com/file/d/1cf3PMImbRjtiVixjs5hL8KotTaM4rHgr/view?usp=sharing"
+            period: "Jan – Jun 2024",
+            title: "Web development intern",
+            org: "Human Resocia Co., Ltd.",
+            place: "Tokyo, Japan (remote)",
+            bullets: [
+              "Built the prototype of a report-generation product.",
+              "Turned an install-based application into a SaaS platform with account creation, login and report previews.",
+              "Worked across UI/UX development, tech-stack research and back-end file processing."
+            ]
           },
           {
-            title: "JLPT N5",
-            meta: "Aug 2024 · The Japan Foundation",
-            link: "https://drive.google.com/file/d/1XkGwWab65sm6gIsFrCqhguL6OPM_JEQa/view?usp=sharing"
+            period: "Jan – Jun 2023",
+            title: "Data analytics and web development intern",
+            org: "Chairman of Rasipuram Town",
+            place: "Amaravati, Andhra Pradesh",
+            bullets: [
+              "Created the concept and front end of the town's official website, a single home for public service announcements and local news.",
+              "Devised the data collection strategy and implemented cleaning procedures that improved data quality."
+            ]
           },
           {
-            title: "Presenter Certificate – ICETSIS 2024",
-            meta: "Feb 2024 · Applied Science University Bahrain · Paper: \"Presence Detection with Wi-Fi using ESP32\"",
-            link: "https://www.linkedin.com/feed/update/urn:li:activity:7160282252805869568/"
+            period: "May – Oct 2022",
+            title: "UI/UX design and 3D development intern",
+            org: "Mukham, VIT-AP Innovation & Incubation Center",
+            place: "Amaravati, Andhra Pradesh",
+            bullets: [
+              "Modelled and sculpted the campus in Blender to enable geo-tagging.",
+              "Redesigned the Mukham app's UI/UX and developed its companion app, MauTHN, from start to finish."
+            ]
           },
-        //   {
-        //     title: "IBM Artificial Intelligence Analyst",
-        //     meta: "Jul 2023 · IBM Developer Skills Network",
-        //     link: "https://courses.ibmcep.cognitiveclass.ai/certificates/b496c3da890f4dfa9c53f7fb9fd32521"
-        //   },
-        //   {
-        //     title: "Fundamentals of Deep Learning",
-        //     meta: "Sep 2022 · NVIDIA Deep Learning Institute",
-        //     link: "https://courses.nvidia.com/certificates/ae21b59f8ac54bacac5221c3ab77f13a/"
-        //   }
+          {
+            period: "May 2019 – Nov 2020",
+            title: "Freelance game and 3D developer",
+            org: "Fiverr, Instagram, DeviantArt and itch.io",
+            place: "",
+            bullets: [
+              "Took commissions for level design, concept design and 3D rendering using Aseprite, Blender and Photoshop.",
+              "Used Godot for level design, Unity for terrain and environments, and the Blender Python API with OpenGL for add-ons.",
+              "Generated large environments with realistic corrosion effects using Godot and Python."
+            ]
+          }
         ]
       },
-      achievements: {
-        id: "achievements",
-        title: "Achievements",
+
+      education: {
+        id: "education",
+        title: "Education",
         items: [
           {
-            title: "5th Rank Holder – B.Tech CSE-AI 2024",
-            meta: "VIT-AP University · Academic Excellence Award · CGPA 9.47",
-            link: "https://drive.google.com/file/d/1JUqG6DID4MT_kL0zdQEv--m56U5IrCxj/view?usp=drive_link"
+            period: "Graduated Sep 2024",
+            title: "Vellore Institute of Technology, Andhra Pradesh",
+            sub: "B.Tech in Computer Science, specialising in Artificial Intelligence",
+            meta: "CGPA 9.47, ranked 5th in the 2024 class"
           },
           {
-            title: "Best Contemporary Project – VITAP Engineering Clinics IoT",
-            meta: "For Integrated Disability Support System",
-            link: "https://www.linkedin.com/posts/pratyush-mohanty-8161b9222_team-androidapp-engineeringdesign-activity-7024057892177674240-6E8l"
+            period: "2020",
+            title: "CMR National Public School, Bengaluru",
+            sub: "Class 12, CBSE (PCMC)",
+            meta: "93.6%"
+          },
+          {
+            period: "2018",
+            title: "Presidency School, Kasturinagar, Bengaluru",
+            sub: "Class 10, CBSE",
+            meta: "96.8%"
+          }
+        ]
+      },
+
+      recognition: {
+        id: "recognition",
+        title: "Awards and certifications",
+        awardsTitle: "Awards",
+        certsTitle: "Certifications",
+        awards: [
+          {
+            title: "5th rank, B.Tech CSE-AI class of 2024",
+            meta: "Academic Excellence Award, VIT-AP University",
+            link: LINKS.awardRank
           },
           {
             title: "Outstanding Capstone Project Award",
-            meta: "For \"Agro Detect: Deep Learning for Paddy Disease Classification\"",
-            link: "https://drive.google.com/file/d/123FNu-pcuJvU6n-fU72irf1M472Lznz1/view?usp=drive_link"
+            meta: "For Agro Detect",
+            link: LINKS.awardCapstone
+          },
+          {
+            title: "Best Contemporary Project",
+            meta: "VIT-AP Engineering Clinics (IoT), for the Integrated Disability Support System",
+            link: LINKS.awardClinics
           }
+        ],
+        certs: [
+          {
+            title: "Master CAN protocol completely from scratch (CAN + CAN-FD)",
+            meta: "Udemy, May 2025",
+            link: LINKS.certCan
+          },
+          {
+            title: "Japanese NAT-TEST, level 4Q",
+            meta: "Senmon Kyouiku Publishing Co., Ltd., Sep 2024",
+            link: LINKS.certNat
+          },
+          {
+            title: "JLPT N5",
+            meta: "The Japan Foundation, Aug 2024",
+            link: LINKS.certJlpt
+          },
+          {
+            title: "Presenter, ICETSIS 2024",
+            meta: "Applied Science University, Bahrain, Feb 2024. Paper: “Presence Detection with Wi-Fi using ESP32”",
+            link: LINKS.certIcetsis
+          }
+          // {
+          //   title: "IBM Artificial Intelligence Analyst",
+          //   meta: "IBM Developer Skills Network, Jul 2023",
+          //   link: LINKS.certIbm
+          // },
+          // {
+          //   title: "Fundamentals of Deep Learning",
+          //   meta: "NVIDIA Deep Learning Institute, Sep 2022",
+          //   link: LINKS.certNvidia
+          // }
         ]
       }
     },
-    footer: "© 2025 Pratyush Mohanty. All rights reserved."
+    footer: "Pratyush Mohanty"
   },
 
+  /* ───────────────────────── 日本語 ───────────────────────── */
   ja: {
     name: "プラトユシュ・モハンティ",
-    tagline: "私は3D・ML・AIが大好きです",
+    nameLines: ["プラトユシュ・", "モハンティ"],
+    role: "3D・機械学習・AIエンジニア",
+    intro: [
+      "大学でコンピュータサイエンス（人工知能専攻）を学び、2019年からBlenderとGodotでものづくりを続けています。",
+      "機械学習・3D・ハードウェアが交わるプロジェクトが好きです。これまでに、スマートフォンの写真から稲の病気を判定する分類モデル、禁煙を支援するIoTデバイス、惑星を生成するノードシステムなどを作りました。"
+    ],
+    photo: "1682097621086.jpeg",
+    social: [
+      { label: "GitHub",    href: LINKS.github },
+      { label: "LinkedIn",  href: LINKS.linkedin },
+      { label: "Instagram", href: LINKS.instagram }
+    ],
     nav: {
-      threeD: "3D・ゲーム開発",
-      education: "教育",
-      experience: "経験",
+      threeD: "3D",
       projects: "プロジェクト",
-      certifications: "認定",
-      achievements: "業績",
-      langSwitch: "English Site",
-      langSwitchHref: "index.html"
-    },
-    social: {
-      linkedin: "https://www.linkedin.com/in/pratyush-mohanty-8161b9222",
-      instagram: "https://www.instagram.com/mohanty_pratyush_xo/",
-      github: "https://github.com/pratyush532"
+      experience: "職歴",
+      education: "学歴",
+      recognition: "受賞・資格",
+      langSwitch: "English",
+      langSwitchHref: "index.html",
+      theme: "ライト／ダークテーマを切り替える"
     },
     sections: {
       threeD: {
         id: "three-d",
-        title: "私の3Dとゲーム開発プロジェクト",
-        subtitle: "使ったソフトウェア: Blender · Unity Engine · Godot Engine · Aseprite",
+        title: "3D・ゲーム開発",
+        note: "使用ツール：Blender、Unity、Godot、Aseprite",
         items: [
           {
-            title: "3Dポートフォリオ",
-            description: "BlenderやGodotを使って作ったアートです。",
-            link: "https://www.instagram.com/mohanty_pratyush_xo/",
-            linkText: "リンク"
+            title: "3Dギャラリー",
+            description: "BlenderとGodotで制作したレンダーやシーン。",
+            link: LINKS.instagram,
+            image: "",
+            linkText: "Instagramで見る"
           },
           {
-            title: "プロシージャルな惑星生成ノードシステム",
-            description: "Blenderで作成したプロシージャルな惑星生成ノードシステム。",
-            link: "http://github.com/pratyush532/3D-and-Blender/tree/main/Planet%20Creation",
-            linkText: "リンク"
+            title: "プロシージャル惑星ジェネレーター",
+            description: "惑星をまるごとプロシージャルに生成するBlenderのノードシステム。",
+            link: LINKS.planet,
+            image: "",
+            linkText: "GitHubでノード構成を見る"
           },
           {
             title: "物理シミュレーション",
-            description: "Blender Python APIを使った物理シミュレーション。",
-            link: "https://www.linkedin.com/posts/pratyush-mohanty-8161b9222_python-apitesting-blender3d-activity-7043952169170976768-cuwx",
-            linkText: "リンク"
+            description: "Blender Python APIで組んだ物理シミュレーション。",
+            link: LINKS.physics,
+            image: "",
+            linkText: "LinkedInで見る"
           },
           {
-            title: "ウェブサイトに3Dモデルを表示するプロジェクト",
-            description: "ウェブサイトに3つの3Dモデルをインタラクティブに表示するプロジェクト。",
-            link: "https://64b0c57266aafd0008d6ff0e--preeminent-rolypoly-6833f5.netlify.app/",
-            linkText: "リンク"
+            title: "ウェブ上の3Dモデル",
+            description: "ウェブページに3Dモデルをインタラクティブに埋め込む試み。",
+            link: LINKS.webModels,
+            image: "",
+            linkText: "デモを開く"
           }
         ]
       },
-      education: {
-        id: "education",
-        title: "教育",
-        items: [
-          {
-            title: "Vellore工科大学 – アーンドラ・プラデーシュ",
-            sub: "コンピュータ科学B.Tech、人工知能専門",
-            meta: "成績: 9.47 CGPA · 2024年9月卒業"
-          },
-          {
-            title: "CMR国立パブリックスクール、ベンガルール",
-            sub: "12学年（PCMC、CBSE）",
-            meta: "93.6% · 2020年"
-          },
-          {
-            title: "Presidency School、カストリーナガール、ベンガルール",
-            sub: "10学年（CBSE）",
-            meta: "96.8% · 2018年"
-          }
-        ]
-      },
-      experience: {
-        id: "experience",
-        title: "経験",
-        items: [
-          {
-            title: "ウェブ開発インターンシップ",
-            org: "ヒューマンリソシア株式会社（リモート勤務）· 東京、日本",
-            period: "2024年1月 ～ 2024年6月",
-            bullets: [
-              "レポート生成ソフトウェアのプロトタイプ開発。",
-              "インストール型ソフトウェアをSaaSプラットフォームに変換。アカウント作成・ログイン・レポートプレビュー機能を追加。",
-              "UI/UX開発、技術スタックの調査、バックエンドでのファイル処理開発を担当。"
-            ]
-          },
-          {
-            title: "データ分析およびウェブ開発インターン",
-            org: "ラシプラム町議会議長 · アマラヴァティ、AP",
-            period: "2023年1月 ～ 2023年6月",
-            bullets: [
-              "ウェブサイトのコンセプトとフロントエンドを作成。",
-              "効率的なデータ収集戦略を作成し、データクリーニング手順を実装してデータ品質を向上。",
-              "公共サービスのお知らせや地域ニュースを提供する包括的なウェブサイトを構築。"
-            ]
-          },
-          {
-            title: "UI/UXデザインおよび3D開発インターン",
-            org: "Mukham（VIT AP イノベーション＆インキュベーションセンター）· アマラヴァティ、AP",
-            period: "2022年5月 ～ 2022年10月",
-            bullets: [
-              "Blenderを使用してキャンパスを3Dでモデリングおよびスカルプティングし、ジオタグ付けを可能に。",
-              "MukhamアプリのUI/UX再設計および連動するMauTHNアプリの完全な開発。"
-            ]
-          },
-          {
-            title: "フリーランスゲーム開発者および3D開発者",
-            org: "Fiverr · Instagram · Deviantart · Itch.io",
-            period: "2019年5月 ～ 2020年11月",
-            bullets: [
-              "Godotを使用したレベルデザインとゲームプレイ、Unityを使用した地形および環境デザイン、Blender Python APIおよびOpenGLを使用したアドオン開発。",
-              "Aesprite、Blender 3D、Photoshop 3Dを使用して環境モデリングを行い、ゲームレベルやコンセプトを開発。",
-              "GodotゲームエンジンおよびPythonを活用し、リアルな腐食効果を備えた広大な環境を生成。"
-            ]
-          }
-        ]
-      },
+
       projects: {
         id: "projects",
         title: "プロジェクト",
         items: [
           {
-            title: "Agro Detect: 深層学習による稲病気分類",
-            tags: ["Python", "Keras", "Streamlit", "Android – Java"],
+            title: "Agro Detect",
+            summary: "作物の写真から稲の病気を判定する深層学習モデル。",
             bullets: [
-              "Paddy DoctorデータセットでOctave ConvolutionやSqueeze-Excitation Networksを用いたカスタムCNNアーキテクチャ。最終精度: 97.59%。",
-              "作物の病気を特定するために画像をアップロードできるAndroidアプリ用の展開可能なMLパイプラインを作成。"
+              "Octave ConvolutionとSqueeze-and-Excitation Networksを用いた独自のCNNアーキテクチャを、Paddy Doctorデータセットで学習。最終精度は97.59%。",
+              "ユーザーが作物の写真をアップロードして病気を特定できるAndroidアプリ向けに、デプロイ可能なMLパイプラインを構築。"
             ],
-            link: "https://drive.google.com/file/d/15kMXunLikw8A-FVX4otFSD8Hl3kWgDMh/view?usp=drive_link",
+            award: "優秀キャップストーンプロジェクト賞",
+            stack: ["Python", "Keras", "Streamlit", "Android（Java）"],
+            link: LINKS.agroDetect,
+            linkText: "プロジェクトを見る"
+          },
+          {
+            title: "Smoother Quit",
+            status: "特許出願中",
+            summary: "ニコチン摂取量を記録し、禁煙を支援するIoTデバイスとアプリ。",
+            bullets: [
+              "3Dプリント製の筐体に収めたRaspberry Piデバイスがニコチンパッチを管理し、使用状況をAndroidアプリに送信。",
+              "デバイス開発チームのリーダーを担当。"
+            ],
+            stack: ["Raspberry Pi", "Python", "Android（Java）", "PHP", "Blender", "FreeCAD"],
+            link: LINKS.github,
+            linkText: "GitHub"
+          },
+          {
+            title: "統合障害支援システム",
+            summary: "障害物検知と深度認識を備えた、センサー付きの歩行杖。",
+            bullets: [
+              "杖がAndroidアプリと無線で通信し、歩行データをアプリに表示。"
+            ],
+            award: "VIT-AP エンジニアリングクリニック（IoT部門）最優秀コンテンポラリープロジェクト",
+            stack: ["Arduino", "C", "Android（Java）", "PHP"],
+            link: LINKS.disability,
             linkText: "プロジェクトを見る"
           },
           {
             title: "Fragility Flowプロット生成",
-            tags: ["Python", "Numpy", "Keras", "Scikit-learn", "Streamlit"],
+            summary: "建物の構造データからFragility Flowプロットを生成するAIツール。",
             bullets: [
-              "建物の構造情報からFragility Flowプロットを生成するAIソリューションを開発。",
-              "インタラクティブなリアルタイムグラフ生成機能を備えた展開可能なWebアプリを作成。"
+              "グラフをリアルタイムかつインタラクティブに描画するウェブアプリとして公開。"
             ],
-            link: "https://github.com/pratyush532",
-            linkText: "プロジェクトを見る"
+            stack: ["Python", "NumPy", "Keras", "scikit-learn", "Streamlit"],
+            link: LINKS.github,
+            linkText: "GitHub"
           },
           {
-            title: "Smoother Quit（特許出願中）",
-            tags: ["Raspberry Pi", "Python", "Android – Java", "PHP", "Blender", "FreeCAD"],
+            title: "糖尿病ヘルスケアデータ分析",
+            summary: "症状や糖尿病網膜症などの合併症から、糖尿病の早期発症を予測する機械学習モデル。",
             bullets: [
-              "喫煙習慣をやめるのを助けるためのニコチン消費を追跡するフルスタックIoTソリューション。",
-              "3Dプリントハウジング付き物理デバイスがAndroidアプリケーションと通信し、デバイスの使用状況を追跡。",
-              "3DプリントハウジングでニコチンパッチをRaspberry Piデバイスで管理するチームをリード。"
+              "書籍『Data Modelling and Analytics for the Internet of Medical Things』に掲載。"
             ],
-            link: "https://github.com/pratyush532",
-            linkText: "プロジェクトを見る"
-          },
-          {
-            title: "糖尿病ヘルスケアデータ分析とアプリケーション",
-            tags: ["研究", "機械学習"],
-            bullets: [
-              "症状や糖尿病網膜症などの合併症を使用して早期糖尿病発症を予測するML。",
-              "書籍「Data Modelling and Analytics for the Internet of Medical Things」に掲載。"
-            ],
-            link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jbrS_tYAAAAJ&citation_for_view=jbrS_tYAAAAJ:u5HHmVD_uO8C",
-            linkText: "研究を見る"
-          },
-          {
-            title: "統合障害支援システム",
-            tags: ["Arduino", "C", "Android – Java", "PHP"],
-            bullets: [
-              "障害者が移動できるようにするための物理的支援デバイスで、障害物検知や深度認識機能を備えています。",
-              "センサー付き歩行杖が無線通信を行い、Androidアプリで歩行データを表示。"
-            ],
-            link: "https://drive.google.com/file/d/1Ll2frNCsTUrgBPxdlAU0DEuTQiFP1XWM/view?usp=drive_link",
-            linkText: "プロジェクトを見る"
+            stack: ["研究", "機械学習"],
+            link: LINKS.diabetes,
+            linkText: "掲載情報を見る"
           }
         ]
       },
-      certifications: {
-        id: "certifications",
-        title: "認定資格",
+
+      experience: {
+        id: "experience",
+        title: "職歴",
         items: [
+          {
+            period: "2024年1月〜6月",
+            title: "ウェブ開発インターン",
+            org: "ヒューマンリソシア株式会社",
+            place: "東京（リモート勤務）",
+            bullets: [
+              "レポート生成ソフトウェアのプロトタイプを開発。",
+              "インストール型ソフトウェアをSaaS化し、アカウント作成・ログイン・レポートプレビュー機能を実装。",
+              "UI/UX開発、技術スタックの調査、バックエンドのファイル処理を担当。"
+            ]
+          },
+          {
+            period: "2023年1月〜6月",
+            title: "データ分析・ウェブ開発インターン",
+            org: "ラシプラム町議会議長",
+            place: "アーンドラ・プラデーシュ州アマラヴァティ",
+            bullets: [
+              "町の公式ウェブサイトのコンセプト立案とフロントエンド開発を担当。公共サービスのお知らせや地域ニュースをまとめて掲載するサイトを構築。",
+              "データ収集の方針を策定し、クリーニング手順を実装してデータ品質を向上。"
+            ]
+          },
+          {
+            period: "2022年5月〜10月",
+            title: "UI/UXデザイン・3D開発インターン",
+            org: "Mukham（VIT-AP イノベーション＆インキュベーションセンター）",
+            place: "アーンドラ・プラデーシュ州アマラヴァティ",
+            bullets: [
+              "ジオタグ付けのため、Blenderでキャンパスを3Dモデリング・スカルプト。",
+              "MukhamアプリのUI/UXを再設計し、連携アプリMauTHNを一から開発。"
+            ]
+          },
+          {
+            period: "2019年5月〜2020年11月",
+            title: "フリーランス ゲーム・3D開発者",
+            org: "Fiverr、Instagram、DeviantArt、itch.io",
+            place: "",
+            bullets: [
+              "Aseprite、Blender、Photoshopを使い、レベルデザイン、コンセプトデザイン、3Dレンダリングの依頼を受注。",
+              "レベルデザインにGodot、地形・環境制作にUnity、アドオン開発にBlender Python APIとOpenGLを使用。",
+              "GodotとPythonで、リアルな腐食表現を備えた広大な環境を生成。"
+            ]
+          }
+        ]
+      },
+
+      education: {
+        id: "education",
+        title: "学歴",
+        items: [
+          {
+            period: "2024年9月 卒業",
+            title: "ヴェロール工科大学 アーンドラ・プラデーシュ校（VIT-AP）",
+            sub: "工学士（コンピュータサイエンス）、人工知能専攻",
+            meta: "CGPA 9.47、2024年度 学年5位"
+          },
+          {
+            period: "2020年",
+            title: "CMRナショナル・パブリックスクール（ベンガルール）",
+            sub: "第12学年、CBSE（PCMC）",
+            meta: "93.6%"
+          },
+          {
+            period: "2018年",
+            title: "プレジデンシー・スクール カストゥリナガル校（ベンガルール）",
+            sub: "第10学年、CBSE",
+            meta: "96.8%"
+          }
+        ]
+      },
+
+      recognition: {
+        id: "recognition",
+        title: "受賞・資格",
+        awardsTitle: "受賞",
+        certsTitle: "資格",
+        awards: [
+          {
+            title: "B.Tech CSE-AI 2024年度 学年5位",
+            meta: "VIT-AP大学 学術優秀賞",
+            link: LINKS.awardRank
+          },
+          {
+            title: "優秀キャップストーンプロジェクト賞",
+            meta: "Agro Detectにて受賞",
+            link: LINKS.awardCapstone
+          },
+          {
+            title: "最優秀コンテンポラリープロジェクト",
+            meta: "VIT-AP エンジニアリングクリニック（IoT部門）、統合障害支援システムにて受賞",
+            link: LINKS.awardClinics
+          }
+        ],
+        certs: [
           {
             title: "CANプロトコルを基礎から完全にマスターする（CAN + CAN-FD）",
-            meta: "2025年3月 · Udemy",
-            link: "https://www.udemy.com/certificate/UC-0c3377df-dbf4-4b37-8400-412c9090db22/"
-          }, 
-          {
-            title: "NAT（日本語能力試験）Q4",
-            meta: "2024年9月 · 専門教育出版株式会社",
-            link: "https://drive.google.com/file/d/1cf3PMImbRjtiVixjs5hL8KotTaM4rHgr/view?usp=sharing"
+            meta: "Udemy、2025年5月",
+            link: LINKS.certCan
           },
           {
-            title: "JLPT N5",
-            meta: "2024年8月 · 日本財団",
-            link: "https://drive.google.com/file/d/1XkGwWab65sm6gIsFrCqhguL6OPM_JEQa/view?usp=sharing"
+            title: "日本語NAT-TEST 4級",
+            meta: "専門教育出版、2024年9月",
+            link: LINKS.certNat
           },
           {
-            title: "プレゼンター認定証 – ICETSIS 2024",
-            meta: "2024年2月 · Applied Science University Bahrain · 論文: 「Presence Detection with Wi-Fi using ESP32」",
-            link: "https://www.linkedin.com/feed/update/urn:li:activity:7160282252805869568/"
-          },
-        //   {
-        //     title: "IBM人工知能アナリスト",
-        //     meta: "2023年7月 · IBM Developer Skills Network",
-        //     link: "https://courses.ibmcep.cognitiveclass.ai/certificates/b496c3da890f4dfa9c53f7fb9fd32521"
-        //   },
-        //   {
-        //     title: "深層学習の基礎",
-        //     meta: "2022年9月 · NVIDIA Deep Learning Institute",
-        //     link: "https://courses.nvidia.com/certificates/ae21b59f8ac54bacac5221c3ab77f13a/"
-        //   }
-        ]
-      },
-      achievements: {
-        id: "achievements",
-        title: "業績",
-        items: [
-          {
-            title: "第5位 – B.Tech CSE-AI 2024",
-            meta: "VIT-AP大学 · 学術優秀賞 · CGPA 9.47",
-            link: "https://drive.google.com/file/d/1JUqG6DID4MT_kL0zdQEv--m56U5IrCxj/view?usp=drive_link"
+            title: "日本語能力試験（JLPT）N5",
+            meta: "国際交流基金、2024年8月",
+            link: LINKS.certJlpt
           },
           {
-            title: "VITAPエンジニアリングクリニック IoT部門 最優秀現代プロジェクト",
-            meta: "統合障害支援システムにて受賞",
-            link: "https://www.linkedin.com/posts/pratyush-mohanty-8161b9222_team-androidapp-engineeringdesign-activity-7024057892177674240-6E8l"
-          },
-          {
-            title: "優秀なキャップストーンプロジェクト賞",
-            meta: "「Agro Detect: 深層学習による稲病気分類」にて受賞",
-            link: "https://drive.google.com/file/d/123FNu-pcuJvU6n-fU72irf1M472Lznz1/view?usp=drive_link"
+            title: "ICETSIS 2024 発表者",
+            meta: "Applied Science University（バーレーン）、2024年2月。論文：「Presence Detection with Wi-Fi using ESP32」",
+            link: LINKS.certIcetsis
           }
+          // {
+          //   title: "IBM人工知能アナリスト",
+          //   meta: "IBM Developer Skills Network、2023年7月",
+          //   link: LINKS.certIbm
+          // },
+          // {
+          //   title: "深層学習の基礎",
+          //   meta: "NVIDIA Deep Learning Institute、2022年9月",
+          //   link: LINKS.certNvidia
+          // }
         ]
       }
     },
-    footer: "© 2025 プラトユシュ・モハンティ. All rights reserved."
+    footer: "プラトユシュ・モハンティ"
   }
 };
