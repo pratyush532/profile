@@ -110,9 +110,8 @@ function renderThreeD(sec) {
 /* ── Projects ── */
 function renderProjects(sec) {
   const rows = sec.items.map(i => `
-    <article class="row" data-area="${i.area}">
+    <article class="row">
       <div class="row-side">
-        <p class="area">${sec.areas[i.area]}</p>
         <h3>${i.title}</h3>
         ${i.status ? `<p class="status">${i.status}</p>` : ''}
         <p class="stack">${i.stack.join(', ')}</p>

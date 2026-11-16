@@ -34,7 +34,7 @@ const CONTENT = {
     role: "3D, machine learning and AI engineer",
     intro: [
       "I studied computer science with a specialisation in AI, and I've been making things in Blender and Godot since 2019.",
-      "I like projects where machine learning, 3D and hardware meet. So far that has meant <span class=\"mark mark-ml\">a crop-disease classifier</span> that works from a phone photo, <span class=\"mark mark-hw\">an IoT device</span> that helps people quit smoking, and <span class=\"mark\">a node system</span> that grows planets."
+      "I like projects where machine learning, 3D and hardware meet. So far that has meant a crop-disease classifier that works from a phone photo, an IoT device that helps people quit smoking, and a node system that grows planets."
     ],
     photo: "1682097621086.jpeg",
     social: [
@@ -94,11 +94,9 @@ const CONTENT = {
       projects: {
         id: "projects",
         title: "Projects",
-        areas: { "3d": "3D", ml: "Machine learning", hw: "Hardware" },
         items: [
           {
             title: "Agro Detect",
-            area: "ml",
             summary: "Deep learning that identifies paddy diseases from a photo of the crop.",
             bullets: [
               "Custom CNN architectures using Octave Convolution and Squeeze-and-Excitation networks, trained on the Paddy Doctor dataset. Final accuracy: 97.59%.",
@@ -111,7 +109,6 @@ const CONTENT = {
           },
           {
             title: "Smoother Quit",
-            area: "hw",
             status: "Patent pending",
             summary: "An IoT device and app that track nicotine use and help people quit smoking.",
             bullets: [
@@ -124,7 +121,6 @@ const CONTENT = {
           },
           {
             title: "Integrated Disability Support System",
-            area: "hw",
             summary: "A sensor-equipped walking stick with obstacle detection and depth perception.",
             bullets: [
               "The stick communicates wirelessly with an Android app, which displays the user's gait data."
@@ -136,7 +132,6 @@ const CONTENT = {
           },
           {
             title: "Fragility Flow plot generation",
-            area: "ml",
             summary: "An AI tool that generates Fragility Flow plots from a building's structural data.",
             bullets: [
               "Deployed as a web app that draws the graphs interactively, in real time."
@@ -147,7 +142,6 @@ const CONTENT = {
           },
           {
             title: "Diabetic healthcare data analytics",
-            area: "ml",
             summary: "ML models that predict early-onset diabetes from symptoms and complications such as diabetic retinopathy.",
             bullets: [
               "Published in the book “Data Modelling and Analytics for the Internet of Medical Things”."
@@ -299,7 +293,7 @@ const CONTENT = {
     role: "3D・機械学習・AIエンジニア",
     intro: [
       "大学でコンピュータサイエンス（人工知能専攻）を学び、2019年からBlenderとGodotでものづくりを続けています。",
-      "機械学習・3D・ハードウェアが交わるプロジェクトが好きです。これまでに、スマートフォンの写真から<span class=\"mark mark-ml\">稲の病気を判定する分類モデル</span>、禁煙を支援する<span class=\"mark mark-hw\">IoTデバイス</span>、惑星を生成する<span class=\"mark\">ノードシステム</span>などを作りました。"
+      "機械学習・3D・ハードウェアが交わるプロジェクトが好きです。これまでに、スマートフォンの写真から稲の病気を判定する分類モデル、禁煙を支援するIoTデバイス、惑星を生成するノードシステムなどを作りました。"
     ],
     photo: "1682097621086.jpeg",
     social: [
@@ -357,11 +351,9 @@ const CONTENT = {
       projects: {
         id: "projects",
         title: "プロジェクト",
-        areas: { "3d": "3D", ml: "機械学習", hw: "ハードウェア" },
         items: [
           {
             title: "Agro Detect",
-            area: "ml",
             summary: "作物の写真から稲の病気を判定する深層学習モデル。",
             bullets: [
               "Octave ConvolutionとSqueeze-and-Excitation Networksを用いた独自のCNNアーキテクチャを、Paddy Doctorデータセットで学習。最終精度は97.59%。",
@@ -374,7 +366,6 @@ const CONTENT = {
           },
           {
             title: "Smoother Quit",
-            area: "hw",
             status: "特許出願中",
             summary: "ニコチン摂取量を記録し、禁煙を支援するIoTデバイスとアプリ。",
             bullets: [
@@ -387,7 +378,6 @@ const CONTENT = {
           },
           {
             title: "統合障害支援システム",
-            area: "hw",
             summary: "障害物検知と深度認識を備えた、センサー付きの歩行杖。",
             bullets: [
               "杖がAndroidアプリと無線で通信し、歩行データをアプリに表示。"
@@ -399,7 +389,6 @@ const CONTENT = {
           },
           {
             title: "Fragility Flowプロット生成",
-            area: "ml",
             summary: "建物の構造データからFragility Flowプロットを生成するAIツール。",
             bullets: [
               "グラフをリアルタイムかつインタラクティブに描画するウェブアプリとして公開。"
@@ -410,7 +399,6 @@ const CONTENT = {
           },
           {
             title: "糖尿病ヘルスケアデータ分析",
-            area: "ml",
             summary: "症状や糖尿病網膜症などの合併症から、糖尿病の早期発症を予測する機械学習モデル。",
             bullets: [
               "書籍『Data Modelling and Analytics for the Internet of Medical Things』に掲載。"

@@ -12,11 +12,8 @@
   --ink-3:      #8f9298;
   --accent:     #f2a43a;
   --on-accent:  #26282c;
-
-  /* the three areas of work */
-  --c-3d:       #f2a43a;   /* amber: 3D, also the main accent */
-  --c-ml:       #7fb0ff;   /* blue: machine learning */
-  --c-hw:       #74c99b;   /* green: hardware */
+  --pop:        #8e9bff;   /* periwinkle: the second accent, opposite amber on the wheel */
+  --on-pop:     #1c1e33;
 
   --font-display: 'Bricolage Grotesque', 'Zen Kaku Gothic New', system-ui, sans-serif;
   --font-body:    'Zen Kaku Gothic New', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -39,10 +36,8 @@
   --ink-3:      #62676f;
   --accent:     #a85400;
   --on-accent:  #ffffff;
-
-  --c-3d:       #a85400;
-  --c-ml:       #2457b5;
-  --c-hw:       #1d7348;
+  --pop:        #3f4fd1;
+  --on-pop:     #ffffff;
 
   color-scheme: light;
 }
@@ -80,7 +75,7 @@ a { color: inherit; }
   border-radius: 2px;
 }
 
-::selection { background: var(--accent); color: var(--on-accent); }
+::selection { background: var(--pop); color: var(--on-pop); }
 
 .container {
   max-width: var(--page);
@@ -182,12 +177,12 @@ nav a { text-decoration: none; }
   padding-block: clamp(3rem, 9vw, 6.5rem);
 }
 
-/* Portrait: the photo with three colour plates stacked behind it, one per area */
+/* Portrait: the photo with a solid periwinkle block offset behind it */
 .portrait {
   justify-self: end;
   width: 100%;
   max-width: 21rem;
-  margin: 0 2.25rem 2.25rem 0;
+  margin: 0 1.25rem 1.25rem 0;
 }
 .portrait img {
   width: 100%; height: auto;
@@ -195,10 +190,7 @@ nav a { text-decoration: none; }
   object-fit: cover;
   border-radius: 6px;
   background: var(--surface);
-  box-shadow:
-    0.75rem 0.75rem 0 var(--c-3d),
-    1.5rem  1.5rem  0 var(--c-ml),
-    2.25rem 2.25rem 0 var(--c-hw);
+  box-shadow: 1.25rem 1.25rem 0 var(--pop);
 }
 .hero-no-photo { grid-template-columns: 1fr; }
 
@@ -226,18 +218,6 @@ h1 span { display: block; }
   color: var(--ink-2);
 }
 .role + .intro { margin-top: 1.5rem; color: var(--ink); }
-
-/* Marker highlight on the three examples in the intro: doubles as the colour key */
-.mark {
-  --k: var(--c-3d);
-  padding-inline: 0.1em;
-  background: linear-gradient(transparent 60%, color-mix(in srgb, var(--k) 38%, transparent) 60%);
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  color: var(--ink);
-}
-.mark-ml { --k: var(--c-ml); }
-.mark-hw { --k: var(--c-hw); }
 
 .social {
   display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem;
@@ -292,7 +272,7 @@ h3 {
   display: flex; flex-direction: column; gap: 0.3rem;
   height: 100%;
   padding: 1.4rem 0 1.9rem;
-  border-top: 2px solid var(--c-3d);
+  border-top: 2px solid var(--pop);
   text-decoration: none;
 }
 .tile-img {
@@ -330,23 +310,10 @@ h3 {
   padding-block: 1.9rem;
   border-top: 1px solid var(--line);
 }
-.rows > .row:first-child { border-top: 2px solid var(--ink); }
+.rows > .row:first-child { border-top: 2px solid var(--pop); }
 .row-compact { padding-block: 1.35rem; }
 
 .row-main { max-width: 40rem; }
-
-/* Projects: each row's top rule and label take the colour of its area */
-.row[data-area] { border-top: 2px solid var(--k); }
-.rows > .row[data-area]:first-child { border-top-color: var(--k); }
-[data-area="3d"] { --k: var(--c-3d); }
-[data-area="ml"] { --k: var(--c-ml); }
-[data-area="hw"] { --k: var(--c-hw); }
-.area {
-  margin-bottom: 0.35rem;
-  color: var(--k);
-  font-size: 0.875rem;
-  font-weight: 700;
-}
 
 .period, .stack, .meta, .place { font-size: 0.9375rem; color: var(--ink-3); }
 .period { font-variant-numeric: tabular-nums; padding-top: 0.2rem; }
@@ -357,8 +324,9 @@ h3 {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.05rem 0.6rem;
-  border: 1px solid var(--accent); border-radius: 100px;
-  color: var(--accent);
+  border-radius: 100px;
+  background: var(--pop);
+  color: var(--on-pop);
   font-size: 0.8125rem; font-weight: 700;
 }
 
@@ -386,7 +354,7 @@ h3 {
 .award {
   margin-top: 0.9rem;
   padding-left: 0.8rem;
-  border-left: 2px solid var(--accent);
+  border-left: 3px solid var(--pop);
   font-weight: 700;
   line-height: 1.4;
 }
@@ -412,7 +380,7 @@ h3 {
 
 .credits-title {
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 2px solid var(--pop);
 }
 
 .credit-list li { padding-block: 1rem; border-bottom: 1px solid var(--line); }
@@ -477,13 +445,8 @@ footer {
   html { scroll-padding-top: 7rem; }
 
   .hero { grid-template-columns: 1fr; }
-  .portrait { order: -1; justify-self: start; max-width: 10rem; margin: 0 1.2rem 1.6rem 0; }
-  .portrait img {
-    box-shadow:
-      0.4rem 0.4rem 0 var(--c-3d),
-      0.8rem 0.8rem 0 var(--c-ml),
-      1.2rem 1.2rem 0 var(--c-hw);
-  }
+  .portrait { order: -1; justify-self: start; max-width: 10rem; margin: 0 0.75rem 1.25rem 0; }
+  .portrait img { box-shadow: 0.75rem 0.75rem 0 var(--pop); }
 
   .tiles, .credits { grid-template-columns: 1fr; }
 
