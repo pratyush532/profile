@@ -13,6 +13,11 @@
   --accent:     #f2a43a;
   --on-accent:  #26282c;
 
+  /* the three areas of work */
+  --c-3d:       #f2a43a;   /* amber: 3D, also the main accent */
+  --c-ml:       #7fb0ff;   /* blue: machine learning */
+  --c-hw:       #74c99b;   /* green: hardware */
+
   --font-display: 'Bricolage Grotesque', 'Zen Kaku Gothic New', system-ui, sans-serif;
   --font-body:    'Zen Kaku Gothic New', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
@@ -34,6 +39,10 @@
   --ink-3:      #62676f;
   --accent:     #a85400;
   --on-accent:  #ffffff;
+
+  --c-3d:       #a85400;
+  --c-ml:       #2457b5;
+  --c-hw:       #1d7348;
 
   color-scheme: light;
 }
@@ -173,21 +182,12 @@ nav a { text-decoration: none; }
   padding-block: clamp(3rem, 9vw, 6.5rem);
 }
 
-/* Portrait: real photo with a solid amber block offset behind it */
+/* Portrait: the photo with three colour plates stacked behind it, one per area */
 .portrait {
-  position: relative;
-  isolation: isolate;
   justify-self: end;
   width: 100%;
   max-width: 21rem;
-  margin-right: 1rem;
-}
-.portrait::before {
-  content: '';
-  position: absolute; z-index: -1;
-  inset: 1rem -1rem -1rem 1rem;
-  background: var(--accent);
-  border-radius: 6px;
+  margin: 0 2.25rem 2.25rem 0;
 }
 .portrait img {
   width: 100%; height: auto;
@@ -195,6 +195,10 @@ nav a { text-decoration: none; }
   object-fit: cover;
   border-radius: 6px;
   background: var(--surface);
+  box-shadow:
+    0.75rem 0.75rem 0 var(--c-3d),
+    1.5rem  1.5rem  0 var(--c-ml),
+    2.25rem 2.25rem 0 var(--c-hw);
 }
 .hero-no-photo { grid-template-columns: 1fr; }
 
@@ -222,6 +226,18 @@ h1 span { display: block; }
   color: var(--ink-2);
 }
 .role + .intro { margin-top: 1.5rem; color: var(--ink); }
+
+/* Marker highlight on the three examples in the intro: doubles as the colour key */
+.mark {
+  --k: var(--c-3d);
+  padding-inline: 0.1em;
+  background: linear-gradient(transparent 60%, color-mix(in srgb, var(--k) 38%, transparent) 60%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  color: var(--ink);
+}
+.mark-ml { --k: var(--c-ml); }
+.mark-hw { --k: var(--c-hw); }
 
 .social {
   display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem;
@@ -276,9 +292,8 @@ h3 {
   display: flex; flex-direction: column; gap: 0.3rem;
   height: 100%;
   padding: 1.4rem 0 1.9rem;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--c-3d);
   text-decoration: none;
-  transition: border-color 0.15s ease;
 }
 .tile-img {
   width: 100%;
@@ -304,7 +319,6 @@ h3 {
   text-underline-offset: 0.3em;
   transition: text-decoration-color 0.15s ease;
 }
-.tile:hover { border-top-color: var(--accent); }
 .tile:hover .tile-title { color: var(--accent); }
 .tile:hover .tile-cta { text-decoration-color: var(--accent); }
 
@@ -320,6 +334,19 @@ h3 {
 .row-compact { padding-block: 1.35rem; }
 
 .row-main { max-width: 40rem; }
+
+/* Projects: each row's top rule and label take the colour of its area */
+.row[data-area] { border-top: 2px solid var(--k); }
+.rows > .row[data-area]:first-child { border-top-color: var(--k); }
+[data-area="3d"] { --k: var(--c-3d); }
+[data-area="ml"] { --k: var(--c-ml); }
+[data-area="hw"] { --k: var(--c-hw); }
+.area {
+  margin-bottom: 0.35rem;
+  color: var(--k);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
 
 .period, .stack, .meta, .place { font-size: 0.9375rem; color: var(--ink-3); }
 .period { font-variant-numeric: tabular-nums; padding-top: 0.2rem; }
@@ -450,8 +477,13 @@ footer {
   html { scroll-padding-top: 7rem; }
 
   .hero { grid-template-columns: 1fr; }
-  .portrait { order: -1; justify-self: start; max-width: 11rem; margin: 0 0 0.5rem; }
-  .portrait::before { inset: 0.6rem -0.6rem -0.6rem 0.6rem; }
+  .portrait { order: -1; justify-self: start; max-width: 10rem; margin: 0 1.2rem 1.6rem 0; }
+  .portrait img {
+    box-shadow:
+      0.4rem 0.4rem 0 var(--c-3d),
+      0.8rem 0.8rem 0 var(--c-ml),
+      1.2rem 1.2rem 0 var(--c-hw);
+  }
 
   .tiles, .credits { grid-template-columns: 1fr; }
 
